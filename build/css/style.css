@@ -67,10 +67,10 @@ h6 {
 }
 
 .container {
-  max-width: 1240px;
+  max-width: 1150px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 10px;
 }
 
 body {
@@ -105,6 +105,42 @@ body.dark {
   }
 }
 
+@font-face {
+  font-family: "Arial-Bold";
+  src: url("../fonts/Arial-BoldMT.woff2") format("woff2");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Arial-Regular";
+  src: url("../fonts/ArialMT.woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Open-Sans-Regular";
+  src: url("../fonts/OpenSans-Regular.woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Open-Sans-Bold";
+  src: url("../fonts/OpenSans-Bold.woff2");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Din-Pro-Bold";
+  src: url("../fonts/DINPro-Bold.woff2");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Din-Pro-Black";
+  src: url("../fonts/DINPro-Black.woff2");
+  font-weight: 900;
+}
+
 .header {
   background-color: #ff9143;
 }
@@ -121,24 +157,26 @@ body.dark {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 20px 0;
+  padding: 40px 0;
 }
 
-.logo a {
-  color: white;
+.navbar test {
+  display: none;
 }
 
 .menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 30px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .menu__item {
@@ -146,10 +184,15 @@ body.dark {
   display: -ms-flexbox;
   display: flex;
   position: relative;
+  margin-right: 56px;
+}
+
+.menu .menu__item:last-child {
+  margin-right: 0;
 }
 
 .menu__item-link {
-  color: white;
+  color: #232323;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -157,6 +200,8 @@ body.dark {
   -webkit-transition: 0.5s color;
   -o-transition: 0.5s color;
   transition: 0.5s color;
+  font-size: 18px;
+  font-family: "Arial-Regular";
 }
 
 .menu__item-link:after {
@@ -170,22 +215,26 @@ body.dark {
   -webkit-transform: scale(0);
       -ms-transform: scale(0);
           transform: scale(0);
-  -webkit-transition: 0.5s -webkit-transform;
-  transition: 0.5s -webkit-transform;
-  -o-transition: 0.5s transform;
-  transition: 0.5s transform;
-  transition: 0.5s transform, 0.5s -webkit-transform;
+  -webkit-transition: 0.3s -webkit-transform;
+  transition: 0.3s -webkit-transform;
+  -o-transition: 0.3s transform;
+  transition: 0.3s transform;
+  transition: 0.3s transform, 0.3s -webkit-transform;
   display: none;
 }
 
 .menu__item-link:hover {
-  color: #131418;
+  color: #FFDD00;
 }
 
 .menu__item-link:hover:after {
-  -webkit-transform: scale(1);
-      -ms-transform: scale(1);
-          transform: scale(1);
+  -webkit-transform: scale(0.3s);
+      -ms-transform: scale(0.3s);
+          transform: scale(0.3s);
+}
+
+.menu .menu__item-link img {
+  width: 150px;
 }
 
 .burger {
@@ -200,13 +249,19 @@ body.dark {
   }
 }
 
-@media (max-width: 991.98px) {
+@media (max-width: 939.98px) {
   .container {
     max-width: 970px;
   }
 }
 
-@media screen and (max-width: 991.98px) {
+@media screen and (max-width: 939.98px) {
+  .navbar {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+
   .menu {
     position: fixed;
     background: #131418;
@@ -214,6 +269,21 @@ body.dark {
     top: 0;
     height: 100vh;
     width: 100vw;
+    display: none;
+  }
+
+  .menu .navbar {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+
+  .menu .menu__item {
+    margin-right: 0;
+    margin-top: 20px;
+  }
+
+  .menu .menu__item-logo {
     display: none;
   }
 
@@ -251,7 +321,7 @@ body.dark {
   }
 
   .burger.active:before {
-    background: #fefefe;
+    background: #00E3D4;
     -webkit-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
             transform: rotate(45deg);
@@ -262,7 +332,7 @@ body.dark {
   }
 
   .burger.active:after {
-    background: #fefefe;
+    background: #00E3D4;
     -webkit-transform: rotate(-45deg);
         -ms-transform: rotate(-45deg);
             transform: rotate(-45deg);
@@ -314,13 +384,19 @@ body.dark {
   }
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 634.98px) {
   .container {
     max-width: 740px;
   }
 }
 
-@media (max-width: 479.98px) {
+@media (max-width: 474.98px) {
+  .container {
+    max-width: none;
+  }
+}
+
+@media (max-width: 299.98px) {
   .container {
     max-width: none;
   }
